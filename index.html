@@ -78,6 +78,8 @@ section{scroll-margin-top:var(--hdr)}
 @media (max-width:720px){.sec-cta .btn-cta,.ess-cta .btn-cta,.why-foot .btn-cta,.ask .btn-cta,.panel-foot .btn-cta{width:100%}}
 /* header */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--hdr);background:rgba(255,255,255,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .3s,box-shadow .3s}
+.hdr{transition:background .3s,box-shadow .3s,transform .35s var(--ease)}
+.hdr.hide{transform:translateY(-100%)}
 .hdr.solid{background:rgba(255,255,255,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(20,26,60,.25)}
 .hdr-in{height:100%;display:flex;align-items:center;gap:32px}
 .logo-link{display:block;flex:none;height:46px}
@@ -162,19 +164,21 @@ section{scroll-margin-top:var(--hdr)}
 .hero-ctas{justify-content:flex-start;margin-top:26px}
 .hero-ctas .btn{min-height:50px;padding:0 24px;font-size:15.5px}
 .form-card.hero-form{grid-column:2;grid-row:1;justify-self:end;align-self:center;position:relative;inset:auto;width:350px;max-width:350px;margin:0;padding:28px 22px 24px;border-radius:20px;background:rgba(255,255,255,.96)}
-.hero-form h3{font-size:18px}
+.hero-form h3{font-size:15.5px}
 .hero-form .fields{gap:12px;margin-top:20px}
 .hero-form .inp{height:50px;font-size:14.5px;border-radius:11px}
 .hero-form .phone-row .cc{width:78px}
 .hero-form .submit{min-height:52px;margin-top:20px;font-size:15.5px}
 .hero .trust{flex-direction:column;gap:12px;margin-top:26px;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;width:100%}
 }
+.ul-mark{position:relative;display:inline-block;padding-bottom:4px}
+.ul-mark::after{content:"";position:absolute;right:0;left:0;bottom:-2px;height:5px;border-radius:999px;background:linear-gradient(to left,var(--purple),var(--lilac))}
 .hl{display:inline-block;background:linear-gradient(135deg,#7B3A98 0%,#5A2670 100%);color:#fff;padding:.02em .4em .14em;border-radius:12px;line-height:1.3;box-shadow:0 12px 26px -14px rgba(110,50,135,.8)}
 .steps .hl,.stats .hl{background:linear-gradient(135deg,#B57AD6 0%,#7B3A98 100%);box-shadow:0 12px 26px -14px rgba(0,0,0,.5)}
 /* form */
 .form-card{background:#fff;color:var(--text);border-radius:18px;padding:22px 20px 20px;width:100%;max-width:380px;box-shadow:0 30px 60px -24px rgba(10,14,36,.55);position:relative;overflow:hidden}
 .form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to left,var(--purple),var(--navy))}
-.form-card h3{font-size:18px;line-height:1.45;text-align:center}
+.form-card h3{font-size:15.5px;line-height:1.5;text-align:center}
 .fields{display:flex;flex-direction:column;gap:9px;margin-top:14px}
 .field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.5}
 .field label b{color:var(--purple);font-weight:700}
@@ -494,6 +498,11 @@ body.bar-on .wa-float{bottom:86px}
 .hero .trust{order:7;margin-top:14px;gap:6px 18px;font-size:13px}
 .ess-grid,.stats-grid,.final-grid,.why-head{grid-template-columns:minmax(0,1fr)}
 .ess-media{aspect-ratio:16/10}
+.ess-grid{display:flex;flex-direction:column;gap:0}
+.ess-grid>div:first-child{display:contents}
+.ess-media{order:2;margin-top:22px;width:100%}
+.ess-list{order:3}
+.ess-cta{order:4}
 .svc{grid-template-columns:minmax(0,1fr)}
 .tabs{position:static;flex-direction:row;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;scrollbar-width:none}
 .tab{flex:none;width:auto;white-space:nowrap;scroll-snap-align:start}
@@ -548,7 +557,7 @@ body{font-size:16px}
 .proof{padding:26px 0 20px}
 .ph{width:132px}
 .ess-grid{gap:28px}
-.ess-media{order:-1;aspect-ratio:16/10;border-radius:22px}
+.ess-media{order:2;aspect-ratio:16/10;border-radius:22px}
 .badge{bottom:14px;right:14px;padding:10px 14px}
 .badge strong{font-size:24px}
 .ess-item{padding:14px 12px;gap:12px}
@@ -642,7 +651,7 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 .hero-ctas{margin-top:16px}
 .hero-ctas .btn-cta{width:100%}
 .form-card.hero-form{grid-area:2/1;z-index:3;position:relative;inset:auto;justify-self:center;align-self:start;width:calc(100% - 40px);max-width:420px;margin:-8px auto 32px;padding:24px 20px 22px;border-radius:20px;box-shadow:0 26px 50px -22px rgba(0,0,0,.6)}
-.form-card.hero-form h3{font-size:18px}
+.form-card.hero-form h3{font-size:15.5px}
 .form-card.hero-form .fields{gap:10px;margin-top:16px}
 .form-card.hero-form .inp{height:48px;font-size:16px;padding:0 14px;border-radius:11px}
 .form-card.hero-form .inp::placeholder,.form-card.hero-form select.inp{font-size:14.5px}
@@ -653,8 +662,8 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 }
 @media (max-width:720px){
 .hero-stage{background:linear-gradient(180deg,#2E3C8C 0%,#3B4AA6 18%,#1E2A5E 100%)}
-.hero-media{grid-area:1/1;min-height:0;margin-bottom:-160px}
-.hero-media img{top:0;height:100%;object-position:var(--hm-pos,48% 0%);-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+.hero-media{grid-area:1/1;min-height:0;margin-top:110px;margin-bottom:-170px}
+.hero-media img{top:0;height:100%;object-position:var(--hm-pos,48% 0%);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 70%,transparent 100%)}
 .hero-stage::before{background:linear-gradient(to bottom,rgba(24,32,84,.55) 0%,rgba(24,32,84,.25) 38%,rgba(24,32,84,.05) 55%,rgba(30,42,94,.55) 85%,#1E2A5E 100%)}
 .hero-copy{padding:calc(var(--hdr) + 22px) 24px 0;align-items:center;text-align:center}
 .hero-copy .route{align-self:center;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff;margin-bottom:14px}
@@ -668,7 +677,7 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 .hero-copy .hero-ctas .btn-cta{width:auto;min-height:48px;padding:0 26px;font-size:15px;box-shadow:0 14px 30px -12px rgba(10,14,36,.6)}
 .hero-copy .trust{display:none}
 .hero-stage::before{grid-area:1/1/3/2}
-.hero-copy{padding-bottom:120px}
+.hero-copy{padding-bottom:180px}
 .form-card.hero-form{grid-area:2/1;margin:0 auto 34px;box-shadow:0 30px 60px -20px rgba(10,14,36,.65)}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
@@ -721,8 +730,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#faq">الأسئلة الشائعة</a>
     </nav>
     <div class="hdr-actions">
-      <a class="icon-btn wa-top js-wa" href="#" aria-label="تواصل عبر واتساب"><svg class="ic"><use href="#i-wa"/></svg></a>
-      <a class="btn btn-primary" href="#contact">احصل على استشارة مجانية</a>
       <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة" aria-controls="mnav" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -775,7 +782,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="field"><label for="h-email">البريد الإلكتروني<b>*</b></label><input class="inp email" id="h-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="example@email.com" data-v required><span class="err-msg" role="alert"></span></div>
           <div class="field"><label for="h-biz">نوع النشاط التجاري</label><input class="inp" id="h-biz" name="business" type="text" placeholder="اكتب نوع نشاطك التجاري"></div>
         </div>
-        <button class="btn btn-primary btn-block submit" type="submit">احصل على استشارتك الآن <svg class="ic arr"><use href="#i-arr"/></svg><span class="spin"></span></button>
+        <button class="btn btn-primary btn-block submit" type="submit">سجل الآن <svg class="ic arr"><use href="#i-arr"/></svg><span class="spin"></span></button>
         <p class="privacy"><svg class="ic"><use href="#i-lock"/></svg>سيتم استخدام بياناتك للتواصل معك بخصوص طلبك فقط.</p>
       </form>
     </div>
@@ -786,7 +793,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- 2 · SOCIAL PROOF -->
 <section class="proof" aria-labelledby="proof-t">
   <div class="wrap sec-head rv" style="margin-bottom:18px">
-    <h2 id="proof-t">موثوقون من قِبل <span class="hl">المستثمرين الدوليين</span></h2>
+    <h2 id="proof-t"><span class="ul-mark">موثوقون</span> من قِبل <span class="hl">المستثمرين الدوليين</span></h2>
     <p class="lead">من تركيا إلى السعودية — نجاحات حقيقية، وشراكات مستمرة.</p>
   </div>
   <div class="marquee js-marquee" data-speed="0.45" aria-label="صور عملائنا">
@@ -1056,7 +1063,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="field"><label for="f-email">البريد الإلكتروني<b>*</b></label><input class="inp email" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="example@email.com" data-v required><span class="err-msg" role="alert"></span></div>
           <div class="field"><label for="f-biz">نوع النشاط التجاري</label><input class="inp" id="f-biz" name="business" type="text" placeholder="اكتب نوع نشاطك التجاري"></div>
         </div>
-        <button class="btn btn-primary btn-block submit" type="submit">احصل على استشارتك الآن <svg class="ic arr"><use href="#i-arr"/></svg><span class="spin"></span></button>
+        <button class="btn btn-primary btn-block submit" type="submit">سجل الآن <svg class="ic arr"><use href="#i-arr"/></svg><span class="spin"></span></button>
         <p class="privacy"><svg class="ic"><use href="#i-lock"/></svg>سيتم استخدام بياناتك للتواصل معك بخصوص طلبك فقط.</p>
       </form>
     </div>
@@ -1179,7 +1186,14 @@ document.addEventListener('click', function(e){
 
 /* Header */
 var hdr = $('#hdr');
-function onScrollHdr(){ hdr.classList.toggle('solid', window.scrollY > 40); }
+var lastY = window.scrollY;
+function onScrollHdr(){
+  var y = window.scrollY;
+  hdr.classList.toggle('solid', y > 40);
+  var menuOpen = document.getElementById('mnav') && document.getElementById('mnav').classList.contains('open');
+  if(!menuOpen){ if(y > 120 && y > lastY + 4) hdr.classList.add('hide'); else if(y < lastY - 4 || y <= 120) hdr.classList.remove('hide'); }
+  lastY = y;
+}
 
 /* Active nav link */
 var navLinks = $$('.nav a');
