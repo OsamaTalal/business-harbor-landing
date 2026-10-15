@@ -1161,6 +1161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){
 'use strict';
 /* ---------- CONFIG: replace placeholders when assets are ready ---------- */
+var LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwROWc4HfHrB_OxDFtn_8wrM0WMG7iChvZYPrDf6TCU2RqpEyhBrI-kBLpSsyRNsktUCg/exec'; // Google Apps Script Web App URL (Google Sheet)
 var THANK_YOU_URL = 'https://osamatalal.github.io/business-harbor-landing/thank-you.html'; // مسار صفحة الشكر بعد إرسال الفورم
 var WHATSAPP_NUMBER = '905541238888'; // +90 554 123 8888
 
@@ -1455,6 +1456,21 @@ function validField(el){
 }
 /* GTM: WhatsApp click tracking */
 document.addEventListener('click', function(e){ var a = e.target.closest && e.target.closest('.js-wa, .js-cta'); if(!a) return; window.dataLayer = window.dataLayer || []; window.dataLayer.push({event:'whatsapp_click', click_location: (a.closest('section,header,footer,.mbar')||{}).id || a.className.split(' ').slice(-1)[0]}); });
+/* Keep UTM params for the whole visit */
+(function(){ try{ var q = new URLSearchParams(location.search); ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(q.get(k)) sessionStorage.setItem(k, q.get(k)); }); }catch(e){} })();
+function sendLead(form){
+  if(!LEADS_ENDPOINT || LEADS_ENDPOINT.indexOf('http') !== 0) return;
+  var cc = form.cc ? form.cc.value : '', ph = (form.phone && form.phone.value || '').trim();
+  var d = new URLSearchParams();
+  d.append('name', (form.name && form.name.value || '').trim());
+  d.append('phone', (cc + ' ' + ph).trim());
+  d.append('email', (form.email && form.email.value || '').trim());
+  d.append('business', (form.business && form.business.value || '').trim());
+  d.append('form_location', form.closest('#hero-form') ? 'hero' : 'final');
+  d.append('page', location.href.split('#')[0]);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ var v=''; try{ v = sessionStorage.getItem(k) || ''; }catch(e){} d.append(k, v); });
+  try{ fetch(LEADS_ENDPOINT, {method:'POST', mode:'no-cors', keepalive:true, body:d}); }catch(e){}
+}
 $$('form.lead').forEach(function(form){
   var els = $$('[data-v]', form);
   els.forEach(function(el){
@@ -1469,7 +1485,7 @@ $$('form.lead').forEach(function(form){
     els.forEach(function(el){ if(!validField(el) && !first) first = el; });
     if(first){ first.focus(); return; }
     var btn = $('.submit', form); btn.classList.add('loading');
-    /* TODO: connect to CRM / form endpoint here */
+    sendLead(form);
     var go = function(){ if(go.done) return; go.done = true; window.location.href = THANK_YOU_URL; };
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({event:'generate_lead', form_location: form.closest('#hero-form') ? 'hero' : 'final', business_type: (form.business && form.business.value || '').trim(), eventCallback: go, eventTimeout: 1200});
