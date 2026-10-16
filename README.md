@@ -46,6 +46,7 @@ Netlify / Vercel / Cloudflare Pages / GitHub Pages / cPanel / Nginx / Apache.
 
 ## ملاحظات
 - التقييمات (35 تقييم حقيقي من Google) وفيديوهات الموبايل بتلف في لوب لا نهائي.
-- نصوص التقييمات بتظهر بلغتها الأصلية في كل النسخ.
+- التقييمات مترجمة للإنجليزي والتركي في نسخها (الترجمة في `i18n/reviews_i18n.py` لو احتاجت تعديل في السورس).
+- صورة قسم "تأسيس الشركة والاستثمار" ليها نسخة لكل لغة: `why-formation.webp` / `why-formation-en.webp` / `why-formation-tr.webp`.
 - الخطوط من Google Fonts (IBM Plex Sans Arabic).
 - قسم فيديوهات "شاهد تجارب عملائنا" ما زال يحتوي على أماكن مؤقتة للفيديوهات.
