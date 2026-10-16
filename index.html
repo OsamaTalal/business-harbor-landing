@@ -391,6 +391,16 @@ select.inp option{color:var(--ink)}
 .modal.open .modal-box{transform:none}
 .modal-box>.ic{width:48px;height:48px;opacity:.7}
 .modal-box small{font-weight:400;opacity:.7;font-size:13px}
+.modal-player{display:none;position:absolute;inset:0;border-radius:inherit;overflow:hidden;background:#000}
+.modal-player iframe,.modal-player video{display:block;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+.modal-box.has-player .modal-player{display:block}
+.modal-box.has-player>.ic,.modal-box.has-player>#modalLabel,.modal-box.has-player>small{visibility:hidden}
+.modal-box.wide{width:min(960px,100%);aspect-ratio:16/9;max-height:none}
+@media (min-width:721px){.vids-view.many{overflow:hidden;touch-action:pan-y;max-width:1040px;margin:0 auto;user-select:none}.vids-view.many .vids{display:flex;max-width:none;will-change:transform}.vids-view.many .vid{flex:none;width:calc((100% - 48px)/3)}}
+.thumb .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb.has-poster .wm{display:none}
+.thumb.has-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,26,60,0) 45%,rgba(20,26,60,.35))}
+.thumb .play,.thumb .thumb-foot{z-index:1}
 .modal .close-btn{position:absolute;top:-60px;left:0;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
 /* logos */
 .logos{background:#fff;padding:44px 0 48px}
@@ -1302,6 +1312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <svg class="ic ic-fill"><use href="#i-play"/></svg>
     <span id="modalLabel">[فيديو العميل]</span>
     <small>يُضاف الفيديو الحقيقي هنا</small>
+    <div class="modal-player" id="modalPlayer"></div>
   </div>
 </div>
 
@@ -1477,9 +1488,27 @@ $$('#faqList .qa').forEach(function(qa){
 
 /* Video modal */
 var modal = $('#modal'), lastFocus = null;
-function openModal(n){ lastFocus = document.activeElement; $('#modalLabel').textContent = '[فيديو العميل ' + n + ']'; modal.classList.add('open'); document.body.classList.add('locked'); $('#modalClose').focus(); }
-function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('locked'); if(lastFocus) lastFocus.focus({preventScroll:true}); }
-document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-video]'); if(b) openModal(b.dataset.video); });
+var box = $('.modal-box', modal), player = $('#modalPlayer');
+function openModal(b){
+  lastFocus = document.activeElement;
+  var yt = b.dataset.yt, src = b.dataset.src;
+  box.classList.remove('wide','has-player'); player.innerHTML = '';
+  if(yt){
+    box.classList.add('has-player'); if(b.dataset.vertical !== '1') box.classList.add('wide');
+    player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt + '?autoplay=1&rel=0&playsinline=1" title="' + (b.querySelector('h3') ? b.querySelector('h3').textContent.replace(/"/g,'&quot;') : '') + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  } else if(src){
+    box.classList.add('has-player');
+    var v = document.createElement('video'); v.src = src; v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline','');
+    if(b.dataset.poster) v.poster = b.dataset.poster;
+    v.addEventListener('loadedmetadata', function(){ if(v.videoWidth > v.videoHeight) box.classList.add('wide'); });
+    player.appendChild(v);
+  } else {
+    $('#modalLabel').textContent = '[فيديو العميل ' + b.dataset.video + ']';
+  }
+  modal.classList.add('open'); document.body.classList.add('locked'); $('#modalClose').focus();
+}
+function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('locked'); player.innerHTML = ''; if(lastFocus) lastFocus.focus({preventScroll:true}); }
+document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-video]'); if(b) openModal(b); });
 $('#modalClose').addEventListener('click', closeModal);
 modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
 document.addEventListener('keydown', function(e){
@@ -1527,7 +1556,7 @@ function LoopSlider(view, track, o){
 (function(){
   var view = $('#vidsView'), track = $('#vids'), dots = $$('#vidDots i'); if(!view || !track) return;
   var sl = LoopSlider(view, track, {interval: 4000, onChange: function(k){ dots.forEach(function(d,i){ d.classList.toggle('on', i === k); }); }});
-  function sync(){ if(isMobile()) sl.enable(); else sl.disable(); }
+  function sync(){ if(isMobile() || view.classList.contains('many')){ [].forEach.call(track.querySelectorAll('.rv'), function(x){ x.classList.add('in'); }); sl.enable(); } else sl.disable(); }
   sync(); window.addEventListener('resize', sync);
 })();
 

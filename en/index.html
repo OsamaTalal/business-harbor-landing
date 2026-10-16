@@ -391,6 +391,16 @@ select.inp option{color:var(--ink)}
 .modal.open .modal-box{transform:none}
 .modal-box>.ic{width:48px;height:48px;opacity:.7}
 .modal-box small{font-weight:400;opacity:.7;font-size:13px}
+.modal-player{display:none;position:absolute;inset:0;border-radius:inherit;overflow:hidden;background:#000}
+.modal-player iframe,.modal-player video{display:block;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+.modal-box.has-player .modal-player{display:block}
+.modal-box.has-player>.ic,.modal-box.has-player>#modalLabel,.modal-box.has-player>small{visibility:hidden}
+.modal-box.wide{width:min(960px,100%);aspect-ratio:16/9;max-height:none}
+@media (min-width:721px){.vids-view.many{overflow:hidden;touch-action:pan-y;max-width:1040px;margin:0 auto;user-select:none}.vids-view.many .vids{display:flex;max-width:none;will-change:transform}.vids-view.many .vid{flex:none;width:calc((100% - 48px)/3)}}
+.thumb .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb.has-poster .wm{display:none}
+.thumb.has-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(-180deg,rgba(20,26,60,0) 45%,rgba(20,26,60,.35))}
+.thumb .play,.thumb .thumb-foot{z-index:1}
 .modal .close-btn{position:absolute;top:-60px;right:0;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
 /* logos */
 .logos{background:#fff;padding:44px 0 48px}
@@ -919,7 +929,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Integrated expertise.<span>Guiding your business to success.</span></h3>
           <p>Integrated expertise that supports you at every stage of your business journey in Saudi Arabia.</p>
         </div>
-        <img class="wf-img" src="../assets/img/why-formation-en.webp" width="1667" height="943" alt="A partnership between an investor from Türkiye and a Saudi businessman, with a map linking Türkiye and Saudi Arabia" loading="lazy" decoding="async">
+        <img class="wf-img" src="../assets/img/why-formation-en.webp" width="1200" height="679" alt="A partnership between an investor from Türkiye and a Saudi businessman, with a map linking Türkiye and Saudi Arabia" loading="lazy" decoding="async">
       </div>
       <div class="why-cards">
         <div class="why-card rv d1"><span class="wn">01</span><h3>Saudi market expertise</h3><p>An understanding of local regulations, requirements and procedures.</p></div>
@@ -982,7 +992,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="vids" id="vids">
       <button class="vid rv d1" type="button" data-video="1">
         <div class="thumb v0"><span class="ph-label">[Client video 1]</span><span class="wm u-markw" aria-hidden="true"></span><span class="play"><svg class="ic ic-fill"><use href="#i-play"/></svg></span><div class="thumb-foot"><span class="u-logow" aria-hidden="true"></span></div></div>
-        <div class="vid-body"><h3>A Turkish investor's experience setting up his company in Saudi Arabia</h3><p class="who">[Client name and business]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>Watch the story</span></div>
+        <div class="vid-body"><h3>A Turkish investor&#x27;s experience setting up his company in Saudi Arabia</h3><p class="who">[Client name and business]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>Watch the story</span></div>
       </button>
       <button class="vid rv d2" type="button" data-video="2">
         <div class="thumb v1"><span class="ph-label">[Client video 2]</span><span class="wm u-markw" aria-hidden="true"></span><span class="play"><svg class="ic ic-fill"><use href="#i-play"/></svg></span><div class="thumb-foot"><span class="u-logow" aria-hidden="true"></span></div></div>
@@ -990,7 +1000,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </button>
       <button class="vid rv d3" type="button" data-video="3">
         <div class="thumb v2"><span class="ph-label">[Client video 3]</span><span class="wm u-markw" aria-hidden="true"></span><span class="play"><svg class="ic ic-fill"><use href="#i-play"/></svg></span><div class="thumb-foot"><span class="u-logow" aria-hidden="true"></span></div></div>
-        <div class="vid-body"><h3>A client's company setup experience</h3><p class="who">[Client name and business]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>Watch the story</span></div>
+        <div class="vid-body"><h3>A client&#x27;s company setup experience</h3><p class="who">[Client name and business]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>Watch the story</span></div>
       </button>
     </div>
     </div>
@@ -1309,6 +1319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <svg class="ic ic-fill"><use href="#i-play"/></svg>
     <span id="modalLabel">[Client video]</span>
     <small>The real video will be added here</small>
+    <div class="modal-player" id="modalPlayer"></div>
   </div>
 </div>
 
@@ -1484,9 +1495,27 @@ $$('#faqList .qa').forEach(function(qa){
 
 /* Video modal */
 var modal = $('#modal'), lastFocus = null;
-function openModal(n){ lastFocus = document.activeElement; $('#modalLabel').textContent = '[Client video ' + n + ']'; modal.classList.add('open'); document.body.classList.add('locked'); $('#modalClose').focus(); }
-function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('locked'); if(lastFocus) lastFocus.focus({preventScroll:true}); }
-document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-video]'); if(b) openModal(b.dataset.video); });
+var box = $('.modal-box', modal), player = $('#modalPlayer');
+function openModal(b){
+  lastFocus = document.activeElement;
+  var yt = b.dataset.yt, src = b.dataset.src;
+  box.classList.remove('wide','has-player'); player.innerHTML = '';
+  if(yt){
+    box.classList.add('has-player'); if(b.dataset.vertical !== '1') box.classList.add('wide');
+    player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt + '?autoplay=1&rel=0&playsinline=1" title="' + (b.querySelector('h3') ? b.querySelector('h3').textContent.replace(/"/g,'&quot;') : '') + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  } else if(src){
+    box.classList.add('has-player');
+    var v = document.createElement('video'); v.src = src; v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline','');
+    if(b.dataset.poster) v.poster = b.dataset.poster;
+    v.addEventListener('loadedmetadata', function(){ if(v.videoWidth > v.videoHeight) box.classList.add('wide'); });
+    player.appendChild(v);
+  } else {
+    $('#modalLabel').textContent = '[Client video ' + b.dataset.video + ']';
+  }
+  modal.classList.add('open'); document.body.classList.add('locked'); $('#modalClose').focus();
+}
+function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('locked'); player.innerHTML = ''; if(lastFocus) lastFocus.focus({preventScroll:true}); }
+document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-video]'); if(b) openModal(b); });
 $('#modalClose').addEventListener('click', closeModal);
 modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
 document.addEventListener('keydown', function(e){
@@ -1534,7 +1563,7 @@ function LoopSlider(view, track, o){
 (function(){
   var view = $('#vidsView'), track = $('#vids'), dots = $$('#vidDots i'); if(!view || !track) return;
   var sl = LoopSlider(view, track, {interval: 4000, onChange: function(k){ dots.forEach(function(d,i){ d.classList.toggle('on', i === k); }); }});
-  function sync(){ if(isMobile()) sl.enable(); else sl.disable(); }
+  function sync(){ if(isMobile() || view.classList.contains('many')){ [].forEach.call(track.querySelectorAll('.rv'), function(x){ x.classList.add('in'); }); sl.enable(); } else sl.disable(); }
   sync(); window.addEventListener('resize', sync);
 })();
 
