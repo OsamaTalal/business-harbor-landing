@@ -313,17 +313,14 @@ select.inp option{color:var(--ink)}
 .acc{display:none}
 /* stats */
 /* government entities */
-.gov{background:#fff;padding:72px 0 8px}
-.gov-box{position:relative;overflow:hidden;border-radius:var(--r);padding:44px 40px 40px;text-align:center;color:#fff;background:linear-gradient(135deg,#7A3A96 0%,var(--purple) 45%,#3E2A78 100%);box-shadow:0 30px 60px -36px rgba(110,50,135,.65)}
-.gov-box::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(217,191,240,.35),transparent 70%);top:-220px;right:-120px;pointer-events:none}
-.gov-box h2{position:relative;font-size:30px;line-height:1.4;margin:0 0 28px;color:#fff}
-.gov-box h2 span{color:var(--lilac-l)}
-.gov-grid{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
-.gov-card{background:#fff;border-radius:16px;height:104px;display:flex;align-items:center;justify-content:center;padding:12px 12px;box-shadow:0 14px 28px -20px rgba(10,14,36,.6);transition:transform .3s var(--ease)}
-.gov-card:hover{transform:translateY(-4px)}
-.gov-card img{max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain;display:block}
+.gov{background:#fff;padding:72px 0 0}
+.gov h2{font-size:clamp(20px,2vw,26px);line-height:1.45}
+.gov-grid{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.gov-card{background:#fff;border:1px solid var(--line);border-radius:16px;height:100px;display:flex;align-items:center;justify-content:center;padding:12px;box-shadow:0 10px 24px -18px rgba(20,26,60,.35);transition:transform .3s var(--ease),box-shadow .3s}
+.gov-card:hover{transform:translateY(-4px);box-shadow:0 18px 30px -18px rgba(20,26,60,.45)}
+.gov-card img{max-width:100%;max-height:62px;width:auto;height:auto;object-fit:contain;display:block}
 @media (max-width:1080px){.gov-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:720px){.gov{padding:44px 0 4px}.gov-box{padding:30px 16px 18px;border-radius:20px}.gov-box h2{font-size:22px;margin-bottom:20px}.gov-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gov-card{height:78px;padding:10px 12px;border-radius:14px}.gov-card img{max-height:46px}}
+@media (max-width:720px){.gov{padding:48px 0 0}.gov-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gov-card{height:78px;padding:10px;border-radius:14px}.gov-card img{max-height:46px}}
 .stats{background:var(--navy);color:#fff;padding:68px 0;position:relative;overflow:hidden}
 .stats::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 85% 10%,rgba(164,105,196,.22),transparent 70%);pointer-events:none}
 .ca,.cb{position:absolute;width:120px;height:120px;pointer-events:none}
@@ -966,10 +963,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- 8b · GOVERNMENT ENTITIES -->
 <section class="gov" aria-labelledby="gov-t">
   <div class="wrap">
-    <div class="gov-box rv">
-      <h2 id="gov-t">نُنجز إجراءاتك <span>لدى الجهات الرسمية</span></h2>
-      <ul class="gov-grid"><li class="gov-card"><img src="assets/img/gov1.webp" alt="وزارة الاستثمار" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov2.webp" alt="المركز السعودي للأعمال" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov3.webp" alt="هيئة الزكاة والضريبة والجمارك" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov4.webp" alt="أبشر أعمال" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov5.webp" alt="قوى" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov6.webp" alt="مركز الإقامة المميزة" loading="lazy" decoding="async"></li></ul>
-    </div>
+    <div class="sec-head rv" style="margin-bottom:30px"><h2 id="gov-t"><span class="hl">نتعامل مباشرةً مع الجهات الرسمية في المملكة</span></h2></div>
+    <ul class="gov-grid rv d1"><li class="gov-card"><img src="assets/img/gov1.webp" alt="وزارة الاستثمار" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov2.webp" alt="المركز السعودي للأعمال" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov3.webp" alt="هيئة الزكاة والضريبة والجمارك" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov4.webp" alt="أبشر أعمال" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov5.webp" alt="قوى" loading="lazy" decoding="async"></li><li class="gov-card"><img src="assets/img/gov6.webp" alt="مركز الإقامة المميزة" loading="lazy" decoding="async"></li></ul>
   </div>
 </section>
 
