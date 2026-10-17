@@ -312,13 +312,18 @@ select.inp option{color:var(--ink)}
 .panel-foot small{font-size:14px;color:var(--muted)}
 .acc{display:none}
 /* stats */
-/* government entities strip */
-.gov{background:var(--bg);padding:52px 0;text-align:center}
-.gov-t{font-size:15px;color:var(--muted);margin:0 0 22px}
-.gov-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-.gov-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 24px;font-size:15px;font-weight:700;color:var(--ink);box-shadow:0 8px 20px -16px rgba(20,26,60,.35)}
-.gov-pill img{height:28px;width:auto;display:block}
-@media (max-width:720px){.gov{padding:36px 0}.gov-t{font-size:14px;margin-bottom:16px}.gov-list{gap:8px}.gov-pill{padding:9px 14px;font-size:13px}.gov-pill img{height:22px}}
+/* government entities */
+.gov{background:#fff;padding:72px 0 8px}
+.gov-box{position:relative;overflow:hidden;border-radius:var(--r);padding:44px 40px 40px;text-align:center;color:#fff;background:linear-gradient(-135deg,#7A3A96 0%,var(--purple) 45%,#3E2A78 100%);box-shadow:0 30px 60px -36px rgba(110,50,135,.65)}
+.gov-box::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(217,191,240,.35),transparent 70%);top:-220px;left:-120px;pointer-events:none}
+.gov-box h2{position:relative;font-size:30px;line-height:1.4;margin:0 0 28px;color:#fff}
+.gov-box h2 span{color:var(--lilac-l)}
+.gov-grid{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.gov-card{background:#fff;border-radius:16px;height:104px;display:flex;align-items:center;justify-content:center;padding:12px 12px;box-shadow:0 14px 28px -20px rgba(10,14,36,.6);transition:transform .3s var(--ease)}
+.gov-card:hover{transform:translateY(-4px)}
+.gov-card img{max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain;display:block}
+@media (max-width:1080px){.gov-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:720px){.gov{padding:44px 0 4px}.gov-box{padding:30px 16px 18px;border-radius:20px}.gov-box h2{font-size:22px;margin-bottom:20px}.gov-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gov-card{height:78px;padding:10px 12px;border-radius:14px}.gov-card img{max-height:46px}}
 .stats{background:var(--navy);color:#fff;padding:68px 0;position:relative;overflow:hidden}
 .stats::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 85% 10%,rgba(164,105,196,.22),transparent 70%);pointer-events:none}
 .ca,.cb{position:absolute;width:120px;height:120px;pointer-events:none}
@@ -894,14 +899,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap ess-cta rv d4"><a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>Bir danışmanla görüşün</span></a></div>
 </section>
 
-<!-- 5b · GOVERNMENT ENTITIES -->
-<section class="gov" aria-labelledby="gov-t">
-  <div class="wrap">
-    <p class="gov-t rv" id="gov-t">Krallıktaki resmi kurumlarla doğrudan çalışıyoruz</p>
-    <ul class="gov-list rv d1"><li class="gov-pill">Yatırım Bakanlığı · MISA</li><li class="gov-pill">Suudi İş Merkezi</li><li class="gov-pill">Zekât, Vergi ve Gümrük · ZATCA</li><li class="gov-pill">Absher Business</li><li class="gov-pill">Qiwa</li><li class="gov-pill">Premium İkamet Merkezi</li></ul>
-  </div>
-</section>
-
 <!-- 6 · STATS -->
 <section class="stats" aria-labelledby="stats-t">
   <span class="ca"></span><span class="cb"></span>
@@ -970,6 +967,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="step b last"><span class="step-dot"><svg class="ic"><use href="#i-check"/></svg></span><div class="step-card rv"><span class="k">Adım 08</span><h3>İşiniz faaliyete geçiyor</h3><p>Şirketiniz Suudi pazarında faaliyet göstermeye hazır.</p></div></li>
     </ol>
     <div class="steps-cta rv"><a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>Şirket kuruluşunuza başlayın</span></a></div>
+  </div>
+</section>
+
+<!-- 8b · GOVERNMENT ENTITIES -->
+<section class="gov" aria-labelledby="gov-t">
+  <div class="wrap">
+    <div class="gov-box rv">
+      <h2 id="gov-t">İşlemlerinizi <span>resmi kurumlarda</span> yürütüyoruz</h2>
+      <ul class="gov-grid"><li class="gov-card"><img src="../assets/img/gov1.webp" alt="Yatırım Bakanlığı" loading="lazy" decoding="async"></li><li class="gov-card"><img src="../assets/img/gov2.webp" alt="Suudi İş Merkezi" loading="lazy" decoding="async"></li><li class="gov-card"><img src="../assets/img/gov3.webp" alt="Zekât, Vergi ve Gümrük İdaresi" loading="lazy" decoding="async"></li><li class="gov-card"><img src="../assets/img/gov4.webp" alt="Absher Business" loading="lazy" decoding="async"></li><li class="gov-card"><img src="../assets/img/gov5.webp" alt="Qiwa" loading="lazy" decoding="async"></li><li class="gov-card"><img src="../assets/img/gov6.webp" alt="Premium İkamet Merkezi" loading="lazy" decoding="async"></li></ul>
+    </div>
   </div>
 </section>
 
