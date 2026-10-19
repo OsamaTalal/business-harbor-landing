@@ -1407,7 +1407,7 @@ function buildMarquee(track, html, count){
   track.innerHTML = items + dup;
   track.dataset.count = count;
 }
-var PROOF_IMGS = ['assets/img/proof01.webp','assets/img/proof02.webp','assets/img/proof03.webp','assets/img/proof04.webp'];
+var PROOF_IMGS = ['assets/img/proof01.webp','assets/img/proof05.webp','assets/img/proof02.webp','assets/img/proof06.webp','assets/img/proof03.webp','assets/img/proof07.webp','assets/img/proof04.webp','assets/img/proof08.webp','assets/img/proof09.webp'];
 buildMarquee($('#photoTrack'), function(i,d){
   var src = PROOF_IMGS[(i-1) % PROOF_IMGS.length];
   return '<figure class="ph ph-photo'+(d?' dup':'')+'"'+(d?' aria-hidden="true"':'')+'><img src="'+src+'" alt="'+(d?'':'من عملاء مرسى الأعمال')+'" width="600" height="800" loading="lazy" decoding="async"></figure>';
