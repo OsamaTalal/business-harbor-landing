@@ -49,3 +49,7 @@ Netlify / Vercel / Cloudflare Pages / GitHub Pages / cPanel / Nginx / Apache.
 - التقييمات مترجمة للإنجليزي والتركي في نسخها (الترجمة في `i18n/reviews_i18n.py` لو احتاجت تعديل في السورس).
 - صورة قسم "تأسيس الشركة والاستثمار" ليها نسخة لكل لغة: `why-formation.webp` / `why-formation-en.webp` / `why-formation-tr.webp`.
 - الخطوط من Google Fonts (IBM Plex Sans Arabic).
+- قسم فيديوهات "شاهد تجارب عملائنا" فيه 3 كروت مؤقتة (بدون فيديوهات) لحين ربطه بلوحة التحكم.
+  لتشغيل فيديو حقيقي: أضف على زر الكارت `<button class="vid" data-video="1" ...>` إحدى الخاصيتين:
+  `data-yt="YOUTUBE_ID"` (ومعها `data-vertical="1"` لو Shorts) أو `data-src="رابط ملف mp4"` (واختياري `data-poster="صورة الغلاف"`).
+  الفيديو بيفتح في نافذة منبثقة. ولتغيير صورة الكارت ضع `<img>` داخل `.thumb` مكان `.ph-label`.

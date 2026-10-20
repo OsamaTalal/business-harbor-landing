@@ -399,6 +399,11 @@ select.inp option{color:var(--ink)}
 .modal.open .modal-box{transform:none}
 .modal-box>.ic{width:48px;height:48px;opacity:.7}
 .modal-box small{font-weight:400;opacity:.7;font-size:13px}
+.modal-player{display:none;position:absolute;inset:0;border-radius:inherit;overflow:hidden;background:#000}
+.modal-player iframe,.modal-player video{display:block;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+.modal-box.has-player .modal-player{display:block}
+.modal-box.has-player>.ic,.modal-box.has-player>#modalLabel,.modal-box.has-player>small{visibility:hidden}
+.modal-box.wide{width:min(960px,100%);aspect-ratio:16/9;max-height:none}
 .modal .close-btn{position:absolute;top:-60px;left:0;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
 /* logos */
 .logos{background:#fff;padding:44px 0 48px}
@@ -786,7 +791,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="nav" aria-label="روابط الصفحة">
       <a href="#why">لماذا مرسى الأعمال</a>
       <a href="#steps">خطوات التأسيس</a>
-      <a href="#reviews">تجارب العملاء</a>
+      <a href="#stories">تجارب العملاء</a>
       <a href="#faq">الأسئلة الشائعة</a>
     </nav>
     <div class="hdr-actions">
@@ -805,7 +810,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="mnav-links" aria-label="روابط الصفحة">
     <a href="#why">لماذا مرسى الأعمال <svg class="ic"><use href="#i-arr"/></svg></a>
     <a href="#steps">خطوات التأسيس <svg class="ic"><use href="#i-arr"/></svg></a>
-    <a href="#reviews">تجارب العملاء <svg class="ic"><use href="#i-arr"/></svg></a>
+    <a href="#stories">تجارب العملاء <svg class="ic"><use href="#i-arr"/></svg></a>
     <a href="#faq">الأسئلة الشائعة <svg class="ic"><use href="#i-arr"/></svg></a>
   </nav>
   <div class="mnav-cta">
@@ -977,6 +982,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="track" id="logoTrack"></div>
   </div>
   <div class="wrap sec-cta rv" style="margin-top:12px"><a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>احصل على استشارتك الآن</span></a></div>
+</section>
+
+<!-- 8 · STORIES -->
+<section class="sec stories" id="stories" aria-labelledby="stories-t">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">تجارب عملائنا</span>
+      <h2 class="h2 rv d1" id="stories-t">شاهد تجارب عملائنا</h2>
+      <p class="lead rv d2">قصص وتجارب حقيقية من المستثمرين الذين وثقوا بمرسى الأعمال لمساعدتهم في تأسيس أعمالهم ودخول السوق السعودي.</p>
+    </div>
+    <div class="vids-view" id="vidsView">
+    <div class="vids" id="vids">
+      <button class="vid rv d1" type="button" data-video="1">
+        <div class="thumb v0"><span class="ph-label">[فيديو عميل 1]</span><span class="wm u-markw" aria-hidden="true"></span><span class="play"><svg class="ic ic-fill"><use href="#i-play"/></svg></span><div class="thumb-foot"><span class="u-logow" aria-hidden="true"></span></div></div>
+        <div class="vid-body"><h3>تجربة مستثمر تركي في تأسيس شركته بالسعودية</h3><p class="who">[اسم العميل ونشاطه]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>شاهد تجربة العميل</span></div>
+      </button>
+      <button class="vid rv d2" type="button" data-video="2">
+        <div class="thumb v1"><span class="ph-label">[فيديو عميل 2]</span><span class="wm u-markw" aria-hidden="true"></span><span class="play"><svg class="ic ic-fill"><use href="#i-play"/></svg></span><div class="thumb-foot"><span class="u-logow" aria-hidden="true"></span></div></div>
+        <div class="vid-body"><h3>من تركيا إلى السوق السعودي</h3><p class="who">[اسم العميل ونشاطه]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>شاهد تجربة العميل</span></div>
+      </button>
+      <button class="vid rv d3" type="button" data-video="3">
+        <div class="thumb v2"><span class="ph-label">[فيديو عميل 3]</span><span class="wm u-markw" aria-hidden="true"></span><span class="play"><svg class="ic ic-fill"><use href="#i-play"/></svg></span><div class="thumb-foot"><span class="u-logow" aria-hidden="true"></span></div></div>
+        <div class="vid-body"><h3>تجربة عميل في تأسيس شركته</h3><p class="who">[اسم العميل ونشاطه]</p><span class="watch"><svg class="ic ic-fill"><use href="#i-play"/></svg>شاهد تجربة العميل</span></div>
+      </button>
+    </div>
+    </div>
+    <div class="dots" id="vidDots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    <div class="stories-cta rv">
+      <h3>ابدأ رحلتك إلى السعودية</h3>
+      <p>تحدث مع أحد مستشارينا اليوم.</p>
+      <a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>تحدث مع مستشار</span></a>
+    </div>
+  </div>
 </section>
 
 <!-- 7 · GOOGLE REVIEWS -->
@@ -1285,6 +1323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <svg class="ic ic-fill"><use href="#i-play"/></svg>
     <span id="modalLabel">[فيديو العميل]</span>
     <small>يُضاف الفيديو الحقيقي هنا</small>
+    <div class="modal-player" id="modalPlayer"></div>
   </div>
 </div>
 
@@ -1460,9 +1499,28 @@ $$('#faqList .qa').forEach(function(qa){
 
 /* Video modal */
 var modal = $('#modal'), lastFocus = null;
-function openModal(n){ lastFocus = document.activeElement; $('#modalLabel').textContent = '[فيديو العميل ' + n + ']'; modal.classList.add('open'); document.body.classList.add('locked'); $('#modalClose').focus(); }
-function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('locked'); if(lastFocus) lastFocus.focus({preventScroll:true}); }
-document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-video]'); if(b) openModal(b.dataset.video); });
+/* To show a real video: add data-yt="YOUTUBE_ID" (add data-vertical="1" for Shorts) or data-src="video.mp4" to the .vid button. */
+var mbox = $('.modal-box', modal), mplayer = $('#modalPlayer');
+function openModal(b){
+  lastFocus = document.activeElement;
+  var yt = b.dataset.yt, src = b.dataset.src;
+  mbox.classList.remove('wide','has-player'); mplayer.innerHTML = '';
+  if(yt){
+    mbox.classList.add('has-player'); if(b.dataset.vertical !== '1') mbox.classList.add('wide');
+    mplayer.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(yt) + '?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  } else if(src){
+    mbox.classList.add('has-player');
+    var v = document.createElement('video'); v.src = src; v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline','');
+    if(b.dataset.poster) v.poster = b.dataset.poster;
+    v.addEventListener('loadedmetadata', function(){ if(v.videoWidth > v.videoHeight) mbox.classList.add('wide'); });
+    mplayer.appendChild(v);
+  } else {
+    $('#modalLabel').textContent = '[فيديو العميل ' + b.dataset.video + ']';
+  }
+  modal.classList.add('open'); document.body.classList.add('locked'); $('#modalClose').focus();
+}
+function closeModal(){ modal.classList.remove('open'); document.body.classList.remove('locked'); mplayer.innerHTML = ''; if(lastFocus) lastFocus.focus({preventScroll:true}); }
+document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('[data-video]'); if(b) openModal(b); });
 $('#modalClose').addEventListener('click', closeModal);
 modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
 document.addEventListener('keydown', function(e){
