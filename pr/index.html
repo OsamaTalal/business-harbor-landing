@@ -787,29 +787,24 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 @media (max-width:720px){.cmp{margin-top:26px;border-radius:18px}.cmp-r{grid-template-columns:1fr 1fr}.cmp-k{grid-column:1/-1;padding:14px 16px 4px!important;background:#fff}.cmp-r>div{padding:10px 14px 14px;font-size:14px}.cmp-h .cmp-k{display:none}.cmp-h>div{padding:12px 14px;font-size:14px}}
 @media (max-width:1000px){.pr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.pr-grid{grid-template-columns:minmax(0,1fr);gap:12px}}
-/* PR before/after */
-.ba{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);gap:18px;align-items:stretch;margin-top:40px}
-.ba-col{border-radius:24px;padding:30px 30px 26px;position:relative}
-.ba-b{background:#F4F3F7;border:1px solid var(--line)}
-.ba-a{background:linear-gradient(160deg,#0E5C42 0%,#13704F 55%,#1E8A62 100%);color:#fff;box-shadow:0 30px 60px -34px rgba(14,92,66,.8)}
-.ba-tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 14px;border-radius:999px}
-.ba-b .ba-tag{background:#E6E3EE;color:var(--muted)}
-.ba-a .ba-tag{background:#E7C97A;color:#3d2a05}
-.ba-col h3{font-size:21px;margin:14px 0 18px;line-height:1.4}
-.ba-b h3{color:var(--ink)}
-.ba-a h3{color:#fff}
-.ba-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
-.ba-col li{display:flex;align-items:center;gap:12px;font-size:16px;line-height:1.55}
-.ba-b li{color:var(--muted)}
-.ba-a li{color:#fff;font-weight:600}
-.ba-mk{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;font-weight:700}
-.ba-b .ba-mk{background:#E6E3EE;color:#8A8FA8}
-.ba-a .ba-mk{background:#E7C97A;color:#0E5C42}
-.ba-a .ba-mk .ic{width:15px;height:15px}
-.ba-arrow{display:grid;place-items:center}
-.ba-arrow .ic{width:30px;height:30px;color:#13704F;background:#E3F3EC;border-radius:50%;padding:14px;box-sizing:content-box}
-.ba-note{text-align:center;color:var(--muted);font-size:15px;margin:22px auto 0;max-width:760px}
-@media (max-width:860px){.ba{grid-template-columns:minmax(0,1fr);gap:12px}.ba-arrow .ic{transform:rotate(-90deg)}.ba-col{padding:24px 20px}.ba-col h3{font-size:19px}.ba-col li{font-size:15px}}
+/* PR package */
+.pk{margin-top:40px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#073F2E 0%,#0E5C42 50%,#16774F 100%);color:#fff;box-shadow:0 40px 80px -44px rgba(7,63,46,.9)}
+.pk-txt{padding:44px 44px 40px}
+.pk-tag{display:inline-block;font-size:13.5px;font-weight:700;background:#E7C97A;color:#3d2a05;padding:6px 14px;border-radius:999px}
+.pk h3{font-size:32px;line-height:1.35;margin:18px 0 10px;color:#fff}
+.pk h3 span{display:block;color:#E7C97A}
+.pk-txt>p{color:rgba(255,255,255,.82);font-size:16px;line-height:1.8;margin:0 0 22px;max-width:520px}
+.pk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px}
+.pk li{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:600;line-height:1.5}
+.pk-mk{flex:none;width:26px;height:26px;border-radius:50%;background:#E7C97A;color:#0E5C42;display:grid;place-items:center}
+.pk-mk .ic{width:14px;height:14px}
+.pk-cta{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pk-note{font-size:14px;color:rgba(255,255,255,.75)}
+.pk-media{position:relative;background:#E3F1EA}
+.pk-media{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#EEF7F2,#DCEFE5)}
+.pk-media img{width:100%;height:auto;display:block}
+.why .why-foot{display:none}
+@media (max-width:900px){.pk{grid-template-columns:minmax(0,1fr)}.pk-media{order:-1;aspect-ratio:1672/941}.pk-txt{padding:28px 22px 30px}.pk h3{font-size:25px}.pk ul{grid-template-columns:minmax(0,1fr)}}
 /* PR green identity */
 .hl{background:linear-gradient(135deg,#1E8A62 0%,#0E5C42 100%)!important;box-shadow:0 12px 26px -14px rgba(14,92,66,.7)!important}
 .eyebrow{color:#13704F}
@@ -988,9 +983,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="why-head">
       <div><span class="eyebrow rv">الاستثمار والإقامة</span><h2 class="h2 rv d1" id="why-t">استثمر، أسّس شركتك، <span class="hl">واحصل على الإقامة</span></h2></div>
-      <p class="lead rv d2">قارن بين وضعك اليوم، وما يتغير عندما تستثمر وتؤسس شركتك وتحصل على الإقامة المميزة.</p>
+      <p class="lead rv d2">مسار واحد يجمع تأسيس شركتك وإقامتك المميزة، مع فريق واحد يرافقك من البداية حتى صدور الإقامة.</p>
     </div>
-    <div class="ba"><div class="ba-col ba-b rv d1"><span class="ba-tag">قبل</span><h3>وضعك اليوم</h3><ul><li><span class="ba-mk">&times;</span>شركتك ونشاطك خارج السعودية</li><li><span class="ba-mk">&times;</span>إقامتك مرتبطة بكفيل فرد أو شركة</li><li><span class="ba-mk">&times;</span>رسوم شهرية عن كل مرافق من عائلتك</li><li><span class="ba-mk">&times;</span>تأشيرة خروج وعودة بمدة محددة لكل سفر</li><li><span class="ba-mk">&times;</span>أفراد عائلتك غير مسموح لهم بالعمل</li></ul></div><div class="ba-arrow rv d2" aria-hidden="true"><svg class="ic"><use href="#i-arr"/></svg></div><div class="ba-col ba-a rv d3"><span class="ba-tag">بعد مرسى الأعمال</span><h3>استثمارك وإقامتك في المملكة</h3><ul><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>شركة باسمك في السعودية بملكية 100%</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>إقامة مميزة دون كفيل فرد أو شركة</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>عائلتك معك دون رسوم مرافقين</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>سفر بحرية دون تأشيرة ودون مدة محددة</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>عائلتك تعمل في المملكة</li></ul></div></div><p class="ba-note rv">أغلب عملائنا يحصلون على الإقامة المميزة عبر الاستثمار وتأسيس شركاتهم، ومتاحة أيضًا مسارات للكفاءات ودون استثمار.</p>
+    <div class="pk rv"><div class="pk-txt"><span class="pk-tag">★ مسار المستثمر</span><h3>تأسيس شركتك + إقامتك المميزة<span>في ملف واحد</span></h3><p>بدل أن تتنقل بين أكثر من جهة، نتولى معك تأسيس شركتك وملف إقامتك معًا، خطوة بخطوة.</p><ul><li><span class="pk-mk"><svg class="ic"><use href="#i-check"/></svg></span>دراسة ملفك وتقييم أهليتك</li><li><span class="pk-mk"><svg class="ic"><use href="#i-check"/></svg></span>اختيار النشاط وخطة الاستثمار</li><li><span class="pk-mk"><svg class="ic"><use href="#i-check"/></svg></span>تأسيس شركتك بملكية أجنبية 100%</li><li><span class="pk-mk"><svg class="ic"><use href="#i-check"/></svg></span>تجهيز ملف الإقامة المميزة</li><li><span class="pk-mk"><svg class="ic"><use href="#i-check"/></svg></span>متابعة طلبك حتى صدور القرار</li><li><span class="pk-mk"><svg class="ic"><use href="#i-check"/></svg></span>إضافة عائلتك والدعم بعد الإقامة</li></ul><div class="pk-cta"><a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>اطلب تقييم ملفك</span></a><span class="pk-note">ومتاحة أيضًا مسارات للكفاءات ودون استثمار.</span></div></div><div class="pk-media"><img src="../../assets/img/why-pr.webp" width="1672" height="941" alt="تأسيس شركتك والإقامة المميزة في السعودية" loading="lazy" decoding="async"></div></div>
     <div class="why-foot rv">
       <a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>تحدث مع مستشار</span></a>
     </div>
