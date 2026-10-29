@@ -781,13 +781,9 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 @media (max-width:1000px){.pr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.pr-grid{grid-template-columns:minmax(0,1fr);gap:12px}}
 
-.disc{background:var(--bg);border-top:1px solid var(--line);padding:34px 0}
-.disc-box{max-width:900px;margin:0 auto;display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
-.disc-ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--lav-2);color:var(--purple);display:grid;place-items:center}
-.disc-ic .ic{width:20px;height:20px}
-.disc h2{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 6px}
-.disc p{font-size:14.5px;line-height:1.8;color:var(--muted);margin:0}
-@media (max-width:720px){.disc{padding:24px 0}.disc-box{padding:18px 16px;gap:12px}.disc p{font-size:13.5px}}
+.ftr .ftr-disc{max-width:none;margin:36px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.9;color:rgba(255,255,255,.82)}
+.ftr-disc + .ftr-bottom{margin-top:20px}
+@media (max-width:720px){.ftr .ftr-disc{font-size:13px;text-align:center;margin-top:28px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ما هي الإقامة المميزة في السعودية؟", "acceptedAnswer": {"@type": "Answer", "text": "نظام إقامة يمنح المستثمر وعائلته الإقامة في المملكة دون كفيل، مع مزايا مثل الإعفاء من المقابل المالي للمرافقين، والخروج والعودة دون تأشيرة، وحرية ممارسة الأعمال والاستثمار."}}, {"@type": "Question", "name": "ما الفرق بينها وبين الإقامة العادية؟", "acceptedAnswer": {"@type": "Answer", "text": "في الإقامة العادية تحتاج إلى كفيل، وتدفع المقابل المالي عن مرافقيك، وتستخرج تأشيرة خروج وعودة لكل سفرة. أما الإقامة المميزة فتعفيك من كل ذلك، وتمنحك حرية تغيير العمل وممارسة أعمالك واستثمارك."}}, {"@type": "Question", "name": "كيف أحصل على الإقامة المميزة عن طريق تأسيس شركة؟", "acceptedAnswer": {"@type": "Answer", "text": "تستثمر وتؤسس شركتك في المملكة بملكية أجنبية 100%، ومع تحقيق شروط مسار المستثمر تصبح مؤهلًا للإقامة المميزة لك ولعائلتك. نرافقك من دراسة الاستثمار وتأسيس الشركة حتى صدور الإقامة."}}, {"@type": "Question", "name": "ما شروط الإقامة المميزة عن طريق الاستثمار؟", "acceptedAnswer": {"@type": "Answer", "text": "من أبرزها: استثمار فعلي في شركتك داخل المملكة وفق الحد الأدنى للمسار، وتوفير وظائف خلال أول سنتين من التشغيل، وإثبات الملاءة المالية، وجواز سفر ساري. يوضح لك مستشارك التفاصيل حسب حالتك."}}, {"@type": "Question", "name": "هل يمكنني تأسيس شركة بالإقامة المميزة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم. تمنحك الإقامة المميزة حق ممارسة الأعمال والاستثمار في المملكة وفق نظام الاستثمار، دون كفيل. ونساعدك في تأسيس شركتك بعد حصولك على الإقامة."}}, {"@type": "Question", "name": "كم رسوم الإقامة المميزة؟", "acceptedAnswer": {"@type": "Answer", "text": "تختلف الرسوم حسب المسار وحجم الاستثمار، ويوضحها لك مستشارك بعد تقييم حالتك."}}, {"@type": "Question", "name": "هل تشمل الإقامة أفراد عائلتي؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم. تشمل الزوج/الزوجة والأبناء دون 25 عامًا والوالدين، وفق الشروط المعمول بها."}}, {"@type": "Question", "name": "هل يمكنني البدء وأنا خارج السعودية؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم. نقيّم أهليتك عن بُعد من أي دولة، ونوضح لك المسار والمستندات المطلوبة قبل أي التزام."}}, {"@type": "Question", "name": "هل الموافقة مضمونة؟", "acceptedAnswer": {"@type": "Answer", "text": "قرار الموافقة لدى مركز الإقامة المميزة. دورنا أن نقيّم أهليتك بدقة، ونجهز ملفًا مكتملًا، ونتابعه حتى صدور القرار."}}]}</script>
 </head>
@@ -1318,8 +1314,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <!-- 13 · FOOTER -->
-<!-- DISCLOSURE -->
-<section class="disc" aria-labelledby="disc-t"><div class="wrap"><div class="disc-box"><span class="disc-ic" aria-hidden="true"><svg class="ic"><use href="#i-shield"/></svg></span><div><h2 id="disc-t">إفصاح عن طبيعة الخدمة</h2><p>مرسى الأعمال شركة استشارية خاصة ومستقلة، وليست جهة حكومية أو تابعة لأي جهة رسمية. نقدم خدمات الاستشارات التجارية والاستثمارية ودعم تأسيس الأعمال في المملكة العربية السعودية وفق الأنظمة المعمول بها.</p></div></div></div></section>
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr-grid">
@@ -1342,6 +1336,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
+    <p class="ftr-disc">مرسى الأعمال شركة استشارية خاصة ومستقلة، وليست جهة حكومية أو تابعة لأي جهة رسمية. نقدم خدمات الاستشارات التجارية والاستثمارية ودعم تأسيس الأعمال في المملكة العربية السعودية وفق الأنظمة المعمول بها.</p>
     <div class="ftr-bottom">
       <span>© 2026 مرسى الأعمال (Business Harbor). جميع الحقوق محفوظة.</span>
       <a class="ftr-privacy" href="privacy.html">سياسة الخصوصية</a>
