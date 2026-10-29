@@ -787,6 +787,29 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 @media (max-width:720px){.cmp{margin-top:26px;border-radius:18px}.cmp-r{grid-template-columns:1fr 1fr}.cmp-k{grid-column:1/-1;padding:14px 16px 4px!important;background:#fff}.cmp-r>div{padding:10px 14px 14px;font-size:14px}.cmp-h .cmp-k{display:none}.cmp-h>div{padding:12px 14px;font-size:14px}}
 @media (max-width:1000px){.pr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.pr-grid{grid-template-columns:minmax(0,1fr);gap:12px}}
+/* PR before/after */
+.ba{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);gap:18px;align-items:stretch;margin-top:40px}
+.ba-col{border-radius:24px;padding:30px 30px 26px;position:relative}
+.ba-b{background:#F4F3F7;border:1px solid var(--line)}
+.ba-a{background:linear-gradient(160deg,#0E5C42 0%,#13704F 55%,#1E8A62 100%);color:#fff;box-shadow:0 30px 60px -34px rgba(14,92,66,.8)}
+.ba-tag{display:inline-block;font-size:13px;font-weight:700;padding:5px 14px;border-radius:999px}
+.ba-b .ba-tag{background:#E6E3EE;color:var(--muted)}
+.ba-a .ba-tag{background:#E7C97A;color:#3d2a05}
+.ba-col h3{font-size:21px;margin:14px 0 18px;line-height:1.4}
+.ba-b h3{color:var(--ink)}
+.ba-a h3{color:#fff}
+.ba-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.ba-col li{display:flex;align-items:center;gap:12px;font-size:16px;line-height:1.55}
+.ba-b li{color:var(--muted)}
+.ba-a li{color:#fff;font-weight:600}
+.ba-mk{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;font-weight:700}
+.ba-b .ba-mk{background:#E6E3EE;color:#8A8FA8}
+.ba-a .ba-mk{background:#E7C97A;color:#0E5C42}
+.ba-a .ba-mk .ic{width:15px;height:15px}
+.ba-arrow{display:grid;place-items:center}
+.ba-arrow .ic{width:30px;height:30px;color:#13704F;background:#E3F3EC;border-radius:50%;padding:14px;box-sizing:content-box}
+.ba-note{text-align:center;color:var(--muted);font-size:15px;margin:22px auto 0;max-width:760px}
+@media (max-width:860px){.ba{grid-template-columns:minmax(0,1fr);gap:12px}.ba-arrow .ic{transform:rotate(-90deg)}.ba-col{padding:24px 20px}.ba-col h3{font-size:19px}.ba-col li{font-size:15px}}
 /* PR green identity */
 .hl{background:linear-gradient(135deg,#1E8A62 0%,#0E5C42 100%)!important;box-shadow:0 12px 26px -14px rgba(14,92,66,.7)!important}
 .eyebrow{color:#13704F}
@@ -965,23 +988,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="why-head">
       <div><span class="eyebrow rv">الاستثمار والإقامة</span><h2 class="h2 rv d1" id="why-t">استثمر، أسّس شركتك، <span class="hl">واحصل على الإقامة</span></h2></div>
-      <p class="lead rv d2">أغلب عملائنا يحصلون على الإقامة المميزة عبر الاستثمار وتأسيس شركاتهم، وتتوفر أيضًا مسارات للكفاءات الاستثنائية ودون استثمار.</p>
+      <p class="lead rv d2">قارن بين وضعك اليوم، وما يتغير عندما تستثمر وتؤسس شركتك وتحصل على الإقامة المميزة.</p>
     </div>
-    <div class="bento">
-      <div class="wf rv">
-        <div class="wf-txt">
-          <h3>شركتك في السعودية.<span>طريقك إلى الإقامة المميزة.</span></h3>
-          <p>عندما تستثمر وتؤسس شركتك في المملكة، تصبح مؤهلًا للإقامة المميزة عبر مسار المستثمر، ونرافقك في كل خطوة من الفكرة حتى الإقامة.</p>
-        </div>
-        <img class="wf-img" src="../assets/img/why-pr.webp" width="1672" height="941" alt="الإقامة المميزة: تملّك العقار وتأسيس شركتك باسمك، بدون كفيل، لك ولعائلتك" loading="lazy" decoding="async">
-      </div>
-      <div class="why-cards">
-        <div class="why-card rv d1"><span class="wn">01</span><h3>استثمر في السعودية</h3><p>نحدد معك النشاط المناسب وخطة الاستثمار التي تحقق أهدافك وشروط الإقامة.</p></div>
-        <div class="why-card rv d2"><span class="wn">02</span><h3>أسّس شركتك بملكية 100%</h3><p>نؤسس شركتك في المملكة باسمك، دون شريك سعودي، ونجهزها للانطلاق.</p></div>
-        <div class="why-card rv d3"><span class="wn">03</span><h3>احصل على الإقامة المميزة</h3><p>شركتك واستثمارك يؤهلانك لإقامة المستثمر، لك ولعائلتك بدون كفيل.</p></div>
-        <div class="why-card rv d4"><span class="wn">04</span><h3>شروط الإقامة عبر الاستثمار</h3><p>استثمار فعلي في شركتك داخل المملكة، وتوفير وظائف خلال أول سنتين، مع إثبات الملاءة المالية.</p></div>
-      </div>
-    </div>
+    <div class="ba"><div class="ba-col ba-b rv d1"><span class="ba-tag">قبل</span><h3>وضعك اليوم</h3><ul><li><span class="ba-mk">&times;</span>شركتك ونشاطك خارج السعودية</li><li><span class="ba-mk">&times;</span>إقامتك مرتبطة بكفيل فرد أو شركة</li><li><span class="ba-mk">&times;</span>رسوم شهرية عن كل مرافق من عائلتك</li><li><span class="ba-mk">&times;</span>تأشيرة خروج وعودة بمدة محددة لكل سفر</li><li><span class="ba-mk">&times;</span>أفراد عائلتك غير مسموح لهم بالعمل</li></ul></div><div class="ba-arrow rv d2" aria-hidden="true"><svg class="ic"><use href="#i-arr"/></svg></div><div class="ba-col ba-a rv d3"><span class="ba-tag">بعد مرسى الأعمال</span><h3>استثمارك وإقامتك في المملكة</h3><ul><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>شركة باسمك في السعودية بملكية 100%</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>إقامة مميزة دون كفيل فرد أو شركة</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>عائلتك معك دون رسوم مرافقين</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>سفر بحرية دون تأشيرة ودون مدة محددة</li><li><span class="ba-mk"><svg class="ic"><use href="#i-check"/></svg></span>عائلتك تعمل في المملكة</li></ul></div></div><p class="ba-note rv">أغلب عملائنا يحصلون على الإقامة المميزة عبر الاستثمار وتأسيس شركاتهم، ومتاحة أيضًا مسارات للكفاءات ودون استثمار.</p>
     <div class="why-foot rv">
       <a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>تحدث مع مستشار</span></a>
     </div>
