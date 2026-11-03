@@ -788,21 +788,19 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 @media (max-width:1000px){.pr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.pr-grid{grid-template-columns:minmax(0,1fr);gap:12px}}
 /* PR package */
-.pk{margin-top:44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#3A1650 0%,#5A2670 55%,#7B3A98 100%);color:#fff;box-shadow:0 40px 80px -44px rgba(90,38,112,.6)}
-.pk-txt{padding:56px 56px 52px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-.pk-tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.2px;color:#E7C97A;border:1px solid rgba(231,201,122,.55);padding:5px 14px;border-radius:999px}
-.pk h3{font-size:30px;line-height:1.4;margin:18px 0 28px;color:#fff}
-.pk h3 span{display:block;color:#E7C97A}
-.pk ol{list-style:none;margin:0;padding:0;width:100%;max-width:440px}
-.pk li{display:flex;align-items:center;gap:16px;font-size:17px;font-weight:600;line-height:1.5;padding:14px 0;border-top:1px solid rgba(255,255,255,.14)}
-.pk li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
-.pk-n{flex:none;font-size:14px;font-weight:700;color:#E7C97A;min-width:24px;font-variant-numeric:tabular-nums}
-.pk-cta{margin-top:32px}
-.pk-note{margin:18px auto 0;text-align:center;font-size:14.5px;color:var(--muted)}
-.pk-media{position:relative;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(70% 60% at 50% 55%,#FBF8FE 0%,#F1E8FA 60%,#E9DCF6 100%)}
-.pk-media img{width:100%;height:auto;display:block}
+.why-head{grid-template-columns:minmax(0,1fr)!important}
+.jr{margin-top:48px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.jr ol{list-style:none;margin:0;padding:0;position:relative}
+.jr ol:before{content:"";position:absolute;top:40px;bottom:40px;right:23px;width:2px;background:linear-gradient(#D9BFF0,#E6DAF5)}
+.jr li{position:relative;display:flex;align-items:center;gap:20px;padding:16px 0}
+.jr-n{flex:none;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#7B3A98,#5A2670);color:#fff;font-weight:700;font-size:18px;display:grid;place-items:center;box-shadow:0 0 0 6px #fff,0 10px 20px -10px rgba(90,38,112,.7)}
+.jr li b{display:block;font-size:21px;color:var(--ink);line-height:1.4}
+.jr li small{display:block;font-size:15.5px;color:var(--muted);margin-top:2px}
+.jr-cta{margin-top:28px;padding-right:68px}
+.jr-media{border-radius:28px;background:radial-gradient(70% 70% at 50% 50%,#FBF8FE 0%,#F1E8FA 65%,#E9DCF6 100%);padding:28px}
+.jr-media img{width:100%;height:auto;display:block}
 .why .why-foot{display:none}
-@media (max-width:900px){.pk{grid-template-columns:minmax(0,1fr)}.pk-media{order:-1;padding:12px}.pk-txt{padding:30px 22px 32px}.pk h3{font-size:24px;margin-bottom:20px}.pk li{font-size:16px;padding:12px 0}.pk-cta{width:100%}.pk-cta .btn{width:100%;justify-content:center}}
+@media (max-width:900px){.jr{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:28px}.jr-media{order:-1;padding:12px;border-radius:22px}.jr li b{font-size:18px}.jr-cta{padding-right:0}.jr-cta .btn{width:100%;justify-content:center}}
 /* PR purple package */
 .pk .btn-cta{background:#fff;color:#5A2670;box-shadow:0 14px 30px -14px rgba(0,0,0,.45)}
 .pk .btn-cta .ic{color:#5A2670}
@@ -977,9 +975,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="why-head">
       <div><span class="eyebrow rv">الاستثمار والإقامة</span><h2 class="h2 rv d1" id="why-t">استثمر، أسّس شركتك، <span class="hl">واحصل على الإقامة</span></h2></div>
-      <p class="lead rv d2">مسار واحد يجمع تأسيس شركتك وإقامتك المميزة، مع فريق واحد يرافقك من البداية حتى صدور الإقامة.</p>
     </div>
-    <div class="pk rv"><div class="pk-txt"><span class="pk-tag">مسار المستثمر</span><h3>تأسيس شركتك وإقامتك المميزة<span>في ملف واحد</span></h3><ol><li><span class="pk-n">01</span>دراسة ملفك وتقييم أهليتك</li><li><span class="pk-n">02</span>تأسيس شركتك بملكية أجنبية 100%</li><li><span class="pk-n">03</span>تجهيز ملف الإقامة المميزة ومتابعته</li><li><span class="pk-n">04</span>إضافة عائلتك بعد صدور الإقامة</li></ol><div class="pk-cta"><a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>اطلب تقييم ملفك</span></a></div></div><div class="pk-media"><img src="../assets/img/why-pr.webp" width="1672" height="941" alt="تأسيس شركتك والإقامة المميزة في السعودية" loading="lazy" decoding="async"></div></div><p class="pk-note rv">ومتاحة أيضًا مسارات أخرى للإقامة المميزة، منها مسار الكفاءات ومسارات دون استثمار.</p>
+    <div class="jr"><div class="jr-txt rv"><ol><li><span class="jr-n">1</span><div><b>أسّس شركتك</b><small>بملكية أجنبية 100% في السعودية</small></div></li><li><span class="jr-n">2</span><div><b>احصل على الإقامة المميزة</b><small>إقامة دون كفيل فرد أو شركة</small></div></li><li><span class="jr-n">3</span><div><b>عائلتك معك</b><small>الزوج والأبناء والوالدين</small></div></li></ol><div class="jr-cta"><a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>اطلب تقييم ملفك</span></a></div></div><div class="jr-media rv d1"><img src="../assets/img/why-pr.webp" width="1672" height="941" alt="تأسيس شركتك والإقامة المميزة في السعودية" loading="lazy" decoding="async"></div></div>
     <div class="why-foot rv">
       <a class="btn btn-cta js-cta" href="#" data-target="#contact"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>تحدث مع مستشار</span></a>
     </div>
