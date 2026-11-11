@@ -783,7 +783,9 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 .qz-acts .btn-cta{width:auto}
 .qz-again{font:inherit;font-size:14px;color:var(--purple);background:none;border:0;cursor:pointer;text-decoration:underline}
 .ess-media .badge{display:none}
-.types{background:#fff;padding-bottom:40px}
+.types{background:#fff;padding-top:36px;padding-bottom:40px}
+.ess{padding-bottom:36px}
+@media (max-width:720px){.types{padding-top:28px;padding-bottom:28px}.ess{padding-bottom:28px}.types + .why{padding-top:28px}}
 .types + .why{padding-top:40px}
 .ty-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;max-width:1080px;margin:0 auto}
 .ty{position:relative;display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:28px 24px 24px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
@@ -828,6 +830,9 @@ body.bar-on .wa-float{opacity:1;visibility:visible;transform:none}
 .ftr .ftr-legal{margin:28px 0 0;font-size:13.5px;color:rgba(255,255,255,.7);direction:rtl}
 .ftr .ftr-disc{margin-top:14px!important}
 .ftr-links{display:inline-flex;gap:18px}
+.ftr .ftr-comp{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.85);margin-top:14px}
+.ftr .ftr-comp .ic{width:18px;height:18px;color:#E7C97A;flex:none}
+.ftr .ftr-pol{display:inline-block;margin-top:8px;font-size:14px;font-weight:600;color:#E7C97A;text-decoration:none}
 .ck{position:fixed;inset-inline:16px;bottom:16px;z-index:200;display:flex;justify-content:center}
 .ck[hidden]{display:none}
 .ck-in{max-width:920px;width:100%;background:#fff;border-radius:20px;box-shadow:0 30px 60px -20px rgba(20,26,60,.45);border:1px solid var(--line);padding:18px 22px;display:flex;align-items:center;gap:20px}
@@ -1013,17 +1018,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec types" id="types" aria-labelledby="types-t">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow rv">ابدأ من هنا</span>
+      <span class="eyebrow rv">مسارات التأسيس</span>
       <h2 class="h2 rv d1" id="types-t">من أين <span class="hl">تبدأ؟</span></h2>
-      <p class="lead rv d2">اختر وضعك، ونرسم لك الطريق.</p>
+      <p class="lead rv d2">اختر المسار الأقرب إلى وضعك، وسنحدد معك الخطوات التالية.</p>
     </div>
     <div class="ty-grid">
-      <article class="ty feat rv"><span class="ty-ic"><svg class="ic"><use href="#i-bld"/></svg></span><h3>أبدأ شركة جديدة</h3><p class="ty-d">شركة جديدة باسمك في السعودية، ونساعدك في اختيار نوعها ونشاطها.</p><a class="ty-ask js-ty" href="#" data-t="شركة جديدة"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg>ابدأ من هنا</a></article>
-      <article class="ty rv"><span class="ty-ic"><svg class="ic"><use href="#i-globe"/></svg></span><h3>عندي شركة في تركيا</h3><p class="ty-d">توسّع بشركتك القائمة إلى السوق السعودي عبر فرع لها.</p><a class="ty-ask js-ty" href="#" data-t="فرع لشركتي التركية"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg>ابدأ من هنا</a></article>
-      <article class="ty rv"><span class="ty-ic"><svg class="ic"><use href="#i-award"/></svg></span><h3>شركة + إقامة مميزة</h3><p class="ty-d">أسّس شركتك، وادرس معنا أهليتك للإقامة المميزة.</p><a class="ty-ask js-ty" href="#" data-t="شركة وإقامة مميزة"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg>ابدأ من هنا</a></article>
+      <article class="ty feat rv"><span class="ty-ic"><svg class="ic"><use href="#i-bld"/></svg></span><h3>تأسيس شركة جديدة</h3><p class="ty-d">نرافقك في اختيار الشكل النظامي والنشاط المناسبين لشركتك الجديدة في المملكة.</p><a class="ty-ask js-ty" href="#" data-t="تأسيس شركة جديدة"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg>اطلب استشارة</a></article>
+      <article class="ty rv"><span class="ty-ic"><svg class="ic"><use href="#i-globe"/></svg></span><h3>التوسع بشركتك القائمة</h3><p class="ty-d">لديك شركة في تركيا؟ ندرس معك خيارات التوسع بها في السوق السعودي.</p><a class="ty-ask js-ty" href="#" data-t="التوسع بشركتي القائمة في تركيا"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg>اطلب استشارة</a></article>
+      <article class="ty rv"><span class="ty-ic"><svg class="ic"><use href="#i-award"/></svg></span><h3>التأسيس والإقامة المميزة</h3><p class="ty-d">نخطط معك لتأسيس شركتك، ونقيّم أهليتك للحصول على الإقامة المميزة.</p><a class="ty-ask js-ty" href="#" data-t="تأسيس شركة والإقامة المميزة"><svg class="ic wa-ic" viewBox="0 0 24 24"><use href="#i-wa"/></svg>اطلب استشارة</a></article>
 
     </div>
-    <p class="ty-note">لست متأكدًا؟ <a href="#quiz">اختبر مسارك في دقيقة</a></p>
+    <p class="ty-note">لم تحدد مسارك بعد؟ <a href="#quiz">أجب عن أربعة أسئلة قصيرة</a></p>
   </div>
 </section>
 
@@ -1407,11 +1412,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="ftr-grid">
       <div>
         <span class="ftr-logo u-logow" role="img" aria-label="مرسى الأعمال Business Harbor"></span>
-        <p>مرسى الأعمال شركة استشارات خاصة تساعد المستثمرين من تركيا في تخطيط وتأسيس أعمالهم في المملكة العربية السعودية.</p>
+        <p>مرسى الأعمال شركة استشارات خاصة تساعد المستثمرين من تركيا في تخطيط وتأسيس أعمالهم في المملكة العربية السعودية.</p><p class="ftr-comp"><svg class="ic"><use href="#i-shield"/></svg>نعمل وفق الأنظمة المعمول بها في تركيا والسعودية</p><a class="ftr-pol" href="policies.html">مركز السياسات والامتثال ←</a>
       </div>
       <div>
-        <h4>روابط</h4>
-        <ul><li><a href="#quiz">اختبر مسارك</a></li><li><a href="#types">من أين تبدأ</a></li><li><a href="#faq">الأسئلة الشائعة</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li><li><a href="terms.html">الشروط والأحكام</a></li><li><a href="#" class="js-cookie-open">إعدادات ملفات الارتباط</a></li></ul>
+        <h4>المعلومات القانونية</h4>
+        <ul><li><a href="policies.html">مركز السياسات والامتثال</a></li><li><a href="terms.html">الشروط والأحكام</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li><li><a href="cookies.html">سياسة الكوكيز</a></li><li><a href="data-rights.html">حقوق أصحاب البيانات</a></li><li><a href="#" class="js-cookie-open">إعدادات الكوكيز</a></li></ul>
       </div>
       <div>
         <h4>فروعنا</h4>
@@ -1428,7 +1433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="ftr-disc">مرسى الأعمال شركة استشارية خاصة ومستقلة، وليست جهة حكومية أو تابعة لأي جهة رسمية. نقدم خدمات الاستشارات التجارية والاستثمارية ودعم تأسيس الأعمال في المملكة العربية السعودية وفق الأنظمة المعمول بها.</p>
     <div class="ftr-bottom">
       <span>© 2026 مرسى الأعمال (Business Harbor). جميع الحقوق محفوظة.</span>
-      <span class="ftr-links"><a class="ftr-privacy" href="privacy.html">سياسة الخصوصية</a><a class="ftr-privacy" href="terms.html">الشروط والأحكام</a></span>
+      <span class="ftr-links"><a class="ftr-privacy" href="policies.html">مركز السياسات</a><a class="ftr-privacy" href="privacy.html">الخصوصية</a><a class="ftr-privacy" href="terms.html">الشروط</a></span>
     </div>
   </div>
 </footer>
@@ -1445,7 +1450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="ck" id="ck" role="dialog" aria-live="polite" aria-label="ملفات تعريف الارتباط" hidden>
   <div class="ck-in">
-    <div class="ck-txt"><strong>خصوصيتك تهمنا</strong><p>نستخدم ملفات تعريف الارتباط الضرورية لتشغيل الصفحة، وملفات اختيارية لقياس الأداء وتحسين إعلاناتنا. يمكنك تغيير اختيارك في أي وقت. <a href="privacy.html#cookies">اعرف المزيد</a></p></div>
+    <div class="ck-txt"><strong>خصوصيتك تهمنا</strong><p>نستخدم ملفات تعريف الارتباط الضرورية لتشغيل الصفحة، وملفات اختيارية لقياس الأداء وتحسين إعلاناتنا. يمكنك تغيير اختيارك في أي وقت. <a href="cookies.html">سياسة الكوكيز</a></p></div>
     <div class="ck-acts"><button type="button" class="ck-btn ck-no" id="ckNo">رفض غير الضروري</button><button type="button" class="ck-btn ck-yes" id="ckYes">قبول الكل</button></div>
   </div>
 </div>
