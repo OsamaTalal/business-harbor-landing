@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="tr" dir="ltr">
 <head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=localStorage.getItem('bh_consent');}catch(e){}
+var g=c==='granted'?'granted':'denied';
+gtag('consent','default',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g,functionality_storage:'granted',security_storage:'granted',wait_for_update:500});})();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -757,6 +763,19 @@ html[dir=ltr] .rev-txt{text-align:start}
 .ftr .ftr-disc{max-width:none;margin:36px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.9;color:rgba(255,255,255,.82)}
 .ftr-disc + .ftr-bottom{margin-top:20px}
 @media (max-width:720px){.ftr .ftr-disc{font-size:13px;text-align:center;margin-top:28px}}
+
+.ck{position:fixed;inset-inline:16px;bottom:16px;z-index:200;display:flex;justify-content:center}
+.ck[hidden]{display:none}
+.ck-in{max-width:920px;width:100%;background:#fff;border-radius:20px;box-shadow:0 30px 60px -20px rgba(20,26,60,.45);border:1px solid var(--line);padding:18px 22px;display:flex;align-items:center;gap:20px}
+.ck-txt strong{display:block;color:var(--ink);font-size:15.5px}
+.ck-txt p{margin:4px 0 0;font-size:14px;color:var(--muted);line-height:1.7}
+.ck-txt a{color:var(--purple)}
+.ck-acts{display:flex;gap:10px;flex:none}
+.ck-btn{font:inherit;font-size:14.5px;font-weight:600;border-radius:999px;padding:11px 20px;cursor:pointer;border:1.5px solid var(--purple)}
+.ck-no{background:#fff;color:var(--purple)}
+.ck-yes{background:var(--purple);color:#fff}
+.ftr-legal-links{display:inline-flex;gap:18px;flex-wrap:wrap}
+@media (max-width:720px){.ck-in{flex-direction:column;align-items:stretch;gap:14px;padding:16px}.ck-acts .ck-btn{flex:1}.ck{bottom:84px}.ftr-legal-links{gap:14px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Türkiye'de yaşarken Suudi Arabistan'da şirket kurulumuna başlayabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. İlk danışmanlık ve gereklilik değerlendirmesiyle Türkiye'den başlarsınız; danışmanınız faaliyetinize göre sonraki adımları açıklar."}}, {"@type": "Question", "name": "Hizmetlerinizden yararlanmak için belirli bir uyruk şartı var mı?", "acceptedAnswer": {"@type": "Answer", "text": "Hizmetlerimiz Suudi pazarına girmek isteyen uluslararası yatırımcılar için tasarlanmıştır ve 45'ten fazla ülkeden yatırımcıya hizmet verdik. Gereklilikler durumunuza ve faaliyetinize göre değişir; danışmanınız bunları değerlendirme aşamasında belirler."}}, {"@type": "Question", "name": "Yatırım kaydı ve ticari faaliyet seçiminde yardımcı oluyor musunuz?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Yatırım gerekliliklerini değerlendirir, ticari faaliyetinizi seçmenize yardımcı olur, ardından kayıt işlemlerini hazırlar ve takip ederiz."}}, {"@type": "Question", "name": "Banka hesabı açılışı ve yatırımcı vizesi konusunda yardımcı oluyor musunuz?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. İşe hazırlık aşamasında şirketin banka hesabını açmanıza yardımcı olur, yatırımcı ve genel müdür vizesi işlemlerini destekleriz."}}, {"@type": "Question", "name": "Premium Residency (Ayrıcalıklı İkamet) almama yardımcı olabilir misiniz?", "acceptedAnswer": {"@type": "Answer", "text": "Uygunluğunuzu değerlendirir, size en uygun ikamet türünü seçmenize yardımcı olur, belgeleri hazırlar ve başvuruyu ilgili kurumlarla takip ederiz. Onay kararı yetkili kuruma aittir."}}, {"@type": "Question", "name": "Şirket kurulduktan sonra neler sunuyorsunuz?", "acceptedAnswer": {"@type": "Answer", "text": "Resmi ve düzenleyici uyum, lisans yenilemeleri, devlet platformları ve vizelerin yanı sıra gayrimenkul, pazarlama, finansal yapılandırma ve iş danışmanlığında da yanınızdayız."}}, {"@type": "Question", "name": "Kuruluş süreci ne kadar sürer ve maliyeti nedir?", "acceptedAnswer": {"@type": "Answer", "text": "Süre ve maliyet, faaliyet türüne ve yatırım gerekliliklerine göre değişir. Danışmanınız gerekliliklerinizi değerlendirdikten sonra bunları netleştirir."}}, {"@type": "Question", "name": "Bilgilerimi gönderdikten sonra ne olur?", "acceptedAnswer": {"@type": "Answer", "text": "Danışmanlarımızdan biri ilk danışmanlığı başlatmak, faaliyetinizi ve hedeflerinizi tanımak ve doğru yolu belirlemek için sizinle iletişime geçer."}}]}</script>
 </head>
@@ -1315,7 +1334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="ftr-disc">Business Harbor özel ve bağımsız bir danışmanlık şirketidir; bir devlet kurumu değildir ve herhangi bir resmi kurumla bağlantılı değildir. Suudi Arabistan Krallığı’nda yürürlükteki mevzuata uygun olarak ticari ve yatırım danışmanlığı ile iş kurulumu desteği hizmetleri sunuyoruz.</p>
     <div class="ftr-bottom">
       <span>© 2026 Business Harbor. Tüm hakları saklıdır.</span>
-      <a class="ftr-privacy" href="privacy.html">Gizlilik politikası</a>
+      <span class="ftr-legal-links"><a class="ftr-privacy" href="privacy.html">Gizlilik politikası</a><a class="ftr-privacy" href="cookies.html">Çerez politikası</a><a class="ftr-privacy js-cookie-open" href="#">Çerez ayarları</a></span>
     </div>
   </div>
 </footer>
@@ -1329,6 +1348,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="wa-tip">WhatsApp'tan bize ulaşın<b class="ltr">+90 554 123 8888</b></span>
 </a>
 
+<div class="ck" id="ck" role="dialog" aria-live="polite" aria-label="Çerez politikası" hidden><div class="ck-in"><div class="ck-txt"><strong>Gizliliğiniz bizim için önemli</strong><p>Sayfanın çalışması için zorunlu çerezleri, performansı ölçmek ve reklamlarımızı iyileştirmek için isteğe bağlı çerezleri kullanıyoruz. Tercihinizi istediğiniz zaman değiştirebilirsiniz. <a href="cookies.html">Çerez politikası</a></p></div><div class="ck-acts"><button type="button" class="ck-btn ck-no" id="ckNo">Zorunlu olmayanları reddet</button><button type="button" class="ck-btn ck-yes" id="ckYes">Tümünü kabul et</button></div></div></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Müşteri deneyimi videosu">
   <div class="modal-box">
     <button class="close-btn" id="modalClose" type="button" aria-label="Videoyu kapat"><svg class="ic"><use href="#i-close"/></svg></button>
@@ -1713,6 +1733,20 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, {passive:true});
 window.addEventListener('resize', onScroll);
 onScroll();
+})();
+</script>
+
+<script>
+(function(){
+var ck=document.getElementById('ck'); if(!ck) return;
+function get(){try{return localStorage.getItem('bh_consent');}catch(e){return null;}}
+function set(v){try{localStorage.setItem('bh_consent',v);}catch(e){}
+ if(typeof gtag==='function'){gtag('consent','update',{ad_storage:v,analytics_storage:v,ad_user_data:v,ad_personalization:v});}
+ window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'consent_'+v});ck.hidden=true;}
+if(!get()) ck.hidden=false;
+document.getElementById('ckYes').addEventListener('click',function(){set('granted');});
+document.getElementById('ckNo').addEventListener('click',function(){set('denied');});
+Array.prototype.forEach.call(document.querySelectorAll('.js-cookie-open'),function(a){a.addEventListener('click',function(e){e.preventDefault();ck.hidden=false;});});
 })();
 </script>
 </body>

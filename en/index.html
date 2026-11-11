@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=localStorage.getItem('bh_consent');}catch(e){}
+var g=c==='granted'?'granted':'denied';
+gtag('consent','default',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g,functionality_storage:'granted',security_storage:'granted',wait_for_update:500});})();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -757,6 +763,19 @@ html[dir=ltr] .rev-txt{text-align:start}
 .ftr .ftr-disc{max-width:none;margin:36px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.9;color:rgba(255,255,255,.82)}
 .ftr-disc + .ftr-bottom{margin-top:20px}
 @media (max-width:720px){.ftr .ftr-disc{font-size:13px;text-align:center;margin-top:28px}}
+
+.ck{position:fixed;inset-inline:16px;bottom:16px;z-index:200;display:flex;justify-content:center}
+.ck[hidden]{display:none}
+.ck-in{max-width:920px;width:100%;background:#fff;border-radius:20px;box-shadow:0 30px 60px -20px rgba(20,26,60,.45);border:1px solid var(--line);padding:18px 22px;display:flex;align-items:center;gap:20px}
+.ck-txt strong{display:block;color:var(--ink);font-size:15.5px}
+.ck-txt p{margin:4px 0 0;font-size:14px;color:var(--muted);line-height:1.7}
+.ck-txt a{color:var(--purple)}
+.ck-acts{display:flex;gap:10px;flex:none}
+.ck-btn{font:inherit;font-size:14.5px;font-weight:600;border-radius:999px;padding:11px 20px;cursor:pointer;border:1.5px solid var(--purple)}
+.ck-no{background:#fff;color:var(--purple)}
+.ck-yes{background:var(--purple);color:#fff}
+.ftr-legal-links{display:inline-flex;gap:18px;flex-wrap:wrap}
+@media (max-width:720px){.ck-in{flex-direction:column;align-items:stretch;gap:14px;padding:16px}.ck-acts .ck-btn{flex:1}.ck{bottom:84px}.ftr-legal-links{gap:14px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I start setting up my company in Saudi Arabia while living in Türkiye?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You start with an initial consultation and a requirements assessment from Türkiye, and your consultant explains the next steps based on your business activity."}}, {"@type": "Question", "name": "Do you require a specific nationality to use your services?", "acceptedAnswer": {"@type": "Answer", "text": "Our services are designed for international investors who want to enter the Saudi market, and we have served investors from more than 45 countries. Requirements vary depending on your situation and activity, and your consultant defines them during the assessment stage."}}, {"@type": "Question", "name": "Do you help with investment registration and choosing the business activity?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We assess the investment requirements, help you choose the business activity, then prepare and follow up the registration procedures."}}, {"@type": "Question", "name": "Do you help with opening a bank account and the investor visa?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. As part of the business-readiness stage, we help you open the company's bank account and support the investor and general manager visa procedures."}}, {"@type": "Question", "name": "Can you help me obtain Premium Residency?", "acceptedAnswer": {"@type": "Answer", "text": "We assess your eligibility, help you choose the most suitable residency product, prepare the documents and follow up the application with the relevant authorities. The approval decision remains with the competent authority."}}, {"@type": "Question", "name": "What do you offer after the company is set up?", "acceptedAnswer": {"@type": "Answer", "text": "We stay with you for government and regulatory compliance, license renewals, government platforms and visas, as well as real estate, marketing, financial structuring and business consulting."}}, {"@type": "Question", "name": "How long does the setup process take, and how much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Timing and cost vary by business activity and investment requirements. Your consultant will clarify them after assessing your requirements."}}, {"@type": "Question", "name": "What happens after I send my details?", "acceptedAnswer": {"@type": "Answer", "text": "One of our consultants contacts you to start the initial consultation, learn about your business and goals, and define the right path."}}]}</script>
 </head>
@@ -1315,7 +1334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="ftr-disc">Business Harbor is a private, independent consultancy. It is not a government entity and is not affiliated with any official authority. We provide business and investment consulting services and support for establishing businesses in the Kingdom of Saudi Arabia in accordance with applicable regulations.</p>
     <div class="ftr-bottom">
       <span>© 2026 Business Harbor. All rights reserved.</span>
-      <a class="ftr-privacy" href="privacy.html">Privacy policy</a>
+      <span class="ftr-legal-links"><a class="ftr-privacy" href="privacy.html">Privacy policy</a><a class="ftr-privacy" href="cookies.html">Cookie policy</a><a class="ftr-privacy js-cookie-open" href="#">Cookie settings</a></span>
     </div>
   </div>
 </footer>
@@ -1329,6 +1348,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="wa-tip">Contact us on WhatsApp<b class="ltr">+90 554 123 8888</b></span>
 </a>
 
+<div class="ck" id="ck" role="dialog" aria-live="polite" aria-label="Cookie policy" hidden><div class="ck-in"><div class="ck-txt"><strong>Your privacy matters</strong><p>We use essential cookies to run this page, and optional cookies to measure performance and improve our ads. You can change your choice at any time. <a href="cookies.html">Cookie policy</a></p></div><div class="ck-acts"><button type="button" class="ck-btn ck-no" id="ckNo">Reject non-essential</button><button type="button" class="ck-btn ck-yes" id="ckYes">Accept all</button></div></div></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Client story video">
   <div class="modal-box">
     <button class="close-btn" id="modalClose" type="button" aria-label="Close video"><svg class="ic"><use href="#i-close"/></svg></button>
@@ -1713,6 +1733,20 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, {passive:true});
 window.addEventListener('resize', onScroll);
 onScroll();
+})();
+</script>
+
+<script>
+(function(){
+var ck=document.getElementById('ck'); if(!ck) return;
+function get(){try{return localStorage.getItem('bh_consent');}catch(e){return null;}}
+function set(v){try{localStorage.setItem('bh_consent',v);}catch(e){}
+ if(typeof gtag==='function'){gtag('consent','update',{ad_storage:v,analytics_storage:v,ad_user_data:v,ad_personalization:v});}
+ window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'consent_'+v});ck.hidden=true;}
+if(!get()) ck.hidden=false;
+document.getElementById('ckYes').addEventListener('click',function(){set('granted');});
+document.getElementById('ckNo').addEventListener('click',function(){set('denied');});
+Array.prototype.forEach.call(document.querySelectorAll('.js-cookie-open'),function(a){a.addEventListener('click',function(e){e.preventDefault();ck.hidden=false;});});
 })();
 </script>
 </body>
